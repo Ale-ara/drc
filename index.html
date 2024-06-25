@@ -1,5 +1,3 @@
-
-
 <html lang="pt-br" dir="ltr">
   <head>
     <meta charset="UTF-8" />
@@ -794,391 +792,369 @@
                 <select id="select_options">
 
                     <option value="entrada_postagem">Entrada de membros</option>
-                    <option value="licença_pedido">Pedido de licença ou reserva</option>
-                    <option value="licença_retorno">Retorno de licença ou reserva</option>
-                    <option value="mudança_cargo">Promoção ou rebaixamento</option>
-                    <option value="saída_autopostagem">Saída do setor</option>
-                    <option value="expulsão_postagem">Expulsão do departamento</option>
+                    <option value="licença_pedido">Pedido de Licença/Reserva</option>
+                    <option value="licença_retorno">Retorno de licença/Reserva</option>
+                    <option value="mudança_cargo">Promoção/Rebaixamento</option>
+                    <option value="adv_postagem">Advertência Interna</option>
+                    <option value="saída_autopostagem">Saída do Setor</option>
+                    <option value="expulsão_postagem">Expulsão do Setor</option>
                     <option value="alteração_nickname">Alteração de nickname</option>
                     <option value="atualização_listagem">Atualização da listagem</option>
                 </select>
             </div>
      
             <div class="card" id="entrada_postagem">
-                <div class="tittle">ENTRADA NO SUBGRUPO</div>
-                <form id="novo_membro" action="#" onsubmit="fill_entradas(event)">
-                    <input type="text" name="horario_envio_entradas" id="horario_envio_entradas" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Novos membros</span>
-                            <input name="novos_membros" id="novos_membros" type="text" placeholder="Nickname dos novos membros. Separe com ' / ' Ex: Qox / Amy.Love.Girl" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Cargo</span>
-                            <select id="necessidade_novos">                          
-                                <option value="" disabled selected>Selecione o cargo selecionado</option>
-                                <option value="1">Departamento de Comunicação</option>
-                                <option value="2">Departamento de Eventos</option>
-                                <option value="3">Departamento de Markething</option>
-                            </select>
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_enter" value="Enviar">
-                        </div>
+            <div class="tittle">ENTRADA</div>
+            <form id="novo_membro" action="#" onsubmit="fill_entradas(event)">
+                <input type="text" name="horario_envio_entradas" id="horario_envio_entradas" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Novos membros</span>
+                        <input name="novos_membros" id="novos_membros" type="text" placeholder="Nickname dos novos membros. Separe com ' / ' Ex: Qox / Crisw" required>
                     </div>
-                </form>
-            </div>
- 
-            <div class="card" id="reintegração_membros">
-                <div class="tittle">REINTEGRAÇÃO</div>
-                <form id="postagem_reintegrados" action="#" onsubmit="fill_reintegration(event)">
-                <input type="text" name="horario_envio_reint" id="horario_envio_reint" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Membro reintegrado</span>
-                            <input name="nickname_reintegrado" id="nickname_reintegrado" type="text" placeholder="Nickname do membro reintegrado" required>                 
-                        </div>
-
-                        <div class="input-box">
-                          <span class="details_span">Cargo</span>
-                          <select id="reint_cargo">                          
-                              <option value="" disabled selected>Selecione o cargo reintegrado</option>
-                              <option value="Aplicador">Aplicador</option>
-                          </select>
-                      </div>
-
-                        <div class="input-box">
-                            <span class="details_span">Permissão</span>
-                            <input name="lid_permitida" id="lid_permitida" type="text" placeholder="Membro da intendência que concedeu a permissão" required>                 
-                        </div>
-                       
-                        <div class="button">
-                            <input type="submit" id="enviar_rein" value="Enviar">
-                        </div>
+                    <div class="input-box">
+                        <span class="details_span">Cargo</span>
+                        <select id="necessidade_novos">                          
+                            <option value="" disabled selected>Selecione o cargo selecionado</option>
+                            <option value="1">Departamento de Comunicação</option>
+                              <option value="2">Departamento de Eventos</option>
+                              <option value="3">Departamento de Markething</option>
+                        </select>
                     </div>
-                </form>
-            </div>
- 
-            <div class="card" id="grad_aprovado">
-                <div class="tittle">GRADUAÇÃO</div>
-                <form id="grad_aprovados" action="#" onsubmit="fill_graduation(event)">
-                <input type="text" name="horario_envio_grad" id="horario_envio_grad" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Nickname</span>
-                            <input name="nickname_graduado" id="nickname_graduado" type="text" placeholder="Nickname dos membros aprovados. Separe com ' / '" required>                 
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Curso aplicado</span>
-                            <select id="grad_aplicada">
-                                <option value="" disabled selected>Selecione o curso aplicado</option>
-                                <option value="Graduação Básica">Graduação Básica</option>
-                                <option value="Graduação Avançada">Graduação Avançada</option>
-                            </select>
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_grad" value="Enviar">
-                        </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_enter" value="Enviar">
                     </div>
-                </form>
-            </div>
- 
-            <div class="card" id="licença_pedido">
-                <div class="tittle">PEDIDO DE LICENÇA OU RESERVA</div>
-                <form id="pedido_licence" action="#" onsubmit="fill_license(event)">
-                <input type="text" name="horario_envio_lic" id="horario_envio_lic" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Nickname</span>
-                            <input name="nickname_lic" id="nickname_lic" type="text" name="nickname" placeholder="Nickname do membro ao qual se refere o requerimento" required>                 
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Quantidade de dias</span>
-                            <input name="dias_lic" id="dias_lic" type="number" min="3" max="90" placeholder="Quantidade de dias que serão utilizados na licença" required>                 
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Permissão</span>
-                            <input name="permissao_lic" id="permissao_lic" type="text" placeholder="Nickname do membro que concedeu a permissão" required>                 
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_lic" value="Enviar">
-                        </div>
-                    </div>
-                </form>
+                </div>
+            </form>
         </div>
-               
-        <div class="card" id="licença_retorno">
-                <div class="tittle">RETORNO DE LICENÇA OU RESERVA</div>
-                <form id="licença_ret" action="#" onsubmit="fill_retornos(event)">
-                <input type="text" name="horario_envio_ret" id="horario_envio_ret" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Nickname</span>
-                            <input name="retorno_nick" id="retorno_nick" type="text" placeholder="Nickname do membro ao qual se refere o requerimento" required>                 
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_retorno" value="Enviar">
-                        </div>
+
+        <div class="card" id="reintegração_membros">
+            <div class="tittle">REINTEGRAÇÃO</div>
+            <form id="postagem_reintegrados" action="#" onsubmit="fill_reintegration(event)">
+            <input type="text" name="horario_envio_reint" id="horario_envio_reint" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Membro reintegrado</span>
+                        <input name="nickname_reintegrado" id="nickname_reintegrado" type="text" placeholder="Nickname do membro reintegrado" required>                 
                     </div>
-                </form>
-            </div>
- 
-            <div class="card" id="mudança_cargo">
-                <div class="tittle">PROMOÇÃO OU REBAIXAMENTO</div>
-                <form id="change_cargo" action="#" onsubmit="fill_change(event)">
-                  <input type="text" name="horario_envio_change" id="horario_envio_change" style="display: none;" />                       
-<div class="details">
-                               
- <div class="input-box">
-                                  <span class="details_span">Nickname:</span>                            <input name="nickname_mudança_cargo" id="nickname_mudança_cargo" type="text" placeholder="Nickname do membro que sofrerá a ação proposta" required="" />                                            
- </div>
-                               
- 
-                               
- <div class="input-box">
-                                  <span class="details_span">Cargo atual:</span>                            <select name="antigo_cargo" id="antigo_cargo">
-                   <option value="" disabled="" selected="">Selecione o cargo atual</option>
-                   <option value="1">Departamento de Comunicação</option>
-                   <option value="2">Departamento de Markething</option>
-                   <option value="3">Departamento de Eventos</option>
-                   <option value="4">Secretário</option>
-                   <option value="5">Vice-Líder</option>
-                   <option value="6">Líder</option>
-                            </select>                 
-                        </div>
-                        <div class="input-box">
-                          <span class="details_span">Novo cargo:</span>                            
-                          <select name="novo_cargo" id="novo_cargo">
-                                <option value="" disabled selected>Selecione o novo cargo</option>
-                                <option value="1">Departamento de Comunicação</option>
-                                <option value="2">Departamento de Markething</option>
-                                <option value="3">Departamento de Eventos</option>
-                                <option value="4">Secretário</option>
-                                <option value="5">Vice-Líder</option>
-                                <option value="6">Líder</option>
-                            </select>
-                        </div>
-                       
-                        <div class="input-box">
-                          <span class="details_span">Motivo da ação:</span>                            <input name="motivo_mudança_cargo" id="motivo_mudança_cargo" type="text" placeholder="Motivo da promoção ou rebaixamento" required="" />                                            
+
+                    <div class="input-box">
+                      <span class="details_span">Cargo</span>
+                      <select id="reint_cargo">                          
+                          <option value="" disabled selected>Selecione o cargo reintegrado</option>
+                          <option value="Aplicador">Aplicador</option>
+                      </select>
+                  </div>
+
+                    <div class="input-box">
+                        <span class="details_span">Permissão</span>
+                        <input name="lid_permitida" id="lid_permitida" type="text" placeholder="Membro da intendência que concedeu a permissão" required>                 
+                    </div>
+                   
+                    <div class="button">
+                        <input type="submit" id="enviar_rein" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="grad_aprovado">
+            <div class="tittle">GRADUAÇÃO</div>
+            <form id="grad_aprovados" action="#" onsubmit="fill_graduation(event)">
+            <input type="text" name="horario_envio_grad" id="horario_envio_grad" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Nickname</span>
+                        <input name="nickname_graduado" id="nickname_graduado" type="text" placeholder="Nickname dos membros aprovados. Separe com ' / '" required>                 
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Curso aplicado</span>
+                        <select id="grad_aplicada">
+                            <option value="" disabled selected>Selecione o curso aplicado</option>
+                            <option value="Graduação Básica">Graduação Básica</option>
+                            <option value="Graduação Avançada">Graduação Avançada</option>
+                        </select>
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_grad" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="licença_pedido">
+            <div class="tittle">PEDIDO DE LICENÇA / RESERVA</div>
+            <form id="pedido_licence" action="#" onsubmit="fill_license(event)">
+            <input type="text" name="horario_envio_lic" id="horario_envio_lic" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Nickname</span>
+                        <input name="nickname_lic" id="nickname_lic" type="text" name="nickname" placeholder="Nickname do membro ao qual se refere o requerimento" required>                 
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Quantidade de dias</span>
+                        <input name="dias_lic" id="dias_lic" type="number" min="3" max="90" placeholder="Quantidade de dias que serão utilizados na licença" required>                 
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Permissão</span>
+                        <input name="permissao_lic" id="permissao_lic" type="text" placeholder="Nickname do membro que concedeu a permissão" required>                 
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_lic" value="Enviar">
+                    </div>
+                </div>
+            </form>
+    </div>
+           
+    <div class="card" id="licença_retorno">
+            <div class="tittle">RETORNO DE LICENÇA / RESERVA</div>
+            <form id="licença_ret" action="#" onsubmit="fill_retornos(event)">
+            <input type="text" name="horario_envio_ret" id="horario_envio_ret" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Nickname</span>
+                        <input name="retorno_nick" id="retorno_nick" type="text" placeholder="Nickname do membro ao qual se refere o requerimento" required>                 
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_retorno" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="mudança_cargo">
+            <div class="tittle">PROMOÇÃO / REBAIXAMENTO</div>
+            <form id="change_cargo" action="#" onsubmit="fill_change(event)">
+              <input type="text" name="horario_envio_change" id="horario_envio_change" style="display: none;" />                       <div class="details">
+                           <div class="input-box">
+                              <span class="details_span">Nickname:</span>                            <input name="nickname_mudança_cargo" id="nickname_mudança_cargo" type="text" placeholder="Nickname do membro que sofrerá a ação proposta" required="" />                                            
+</div>
+                           
+
+                           <div class="input-box">
+                              <span class="details_span">Cargo atual:</span>                            <select name="antigo_cargo" id="antigo_cargo">
+               <option value="" disabled="" selected="">Selecione o cargo atual</option>
+               <option value="1">Membro</option>
+               <option value="2">Secretário</option>
+               <option value="3">Vice-Líder</option>
+               <option value="4">Líder</option>
+                            
+                        </select>                 
+                    </div>
+                    <div class="input-box">
+                      <span class="details_span">Novo cargo:</span>                            
+                      <select name="novo_cargo" id="novo_cargo">
+                            <option value="" disabled selected>Selecione o novo cargo</option>
+                            <option value="1">Membro</option>
+                            <option value="2">Secretário</option>
+                            <option value="3">Vice-Líder</option>
+                            <option value="4">Líder</option>
+                           
+                        </select>
+                    </div>
+                   
+                    <div class="input-box">
+                      <span class="details_span">Motivo da ação:</span>                            <input name="motivo_mudança_cargo" id="motivo_mudança_cargo" type="text" placeholder="Motivo da promoção ou rebaixamento" required="" />                                            
 </div> 
 
-                        <div class="button">
-                            <input type="submit" id="enviar_change" value="Enviar">
-                        </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_change" value="Enviar">
                     </div>
-                </form>
-            </div>
- 
-            <div class="card" id="saída_autopostagem">
-                <div class="tittle">SAÍDA DO SETOR</div>
-                <form id="saidas_honrosas" action="#" onsubmit="fill_saida(event)">
-                    <input type="text" name="horario_envio_saida" id="horario_envio_saida" style="display: none;">
-                    <div class="details">
-                        <div class="input-box" style="width: 100%;">
-                            <span class="details_span">Nickname do Membro</span>
-                            <input id="nickname_saída" name="nickname_saída" type="text" placeholder="Nickname do membro saindo do subgrupo." required>                 
-                        </div>
-                        <div class="input-box" style="width: 100%;" id="saida_perm">
-                            <span class="details_span">Permissão</span>
-                            <input id="permissão_saída" name="permissão_saída" type="text" placeholder="Nickname do membro que concedeu a permissão" required>                 
-                        </div>
-
-                        <div class="input-box" style="width: 100%;" id="saida_motivo">
-                          <span class="details_span">Motivo</span>
-                          <input id="motivo_saida" name="motivo_saida" type="text" placeholder="Motivo para saída." required>                 
-                      </div>
-
-                        <div class="check-box">
-                            <input id="confirmar_saida" name="confirmar_saida" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_saida')">     
-                                <label id="confirmar_saida_lb" for="confirmar_saida">Li e concordo com as normas de saída descritas no Regimento Interno.</label><br>
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_saida" value="Enviar">
-                        </div>
-                    </div>
-                </form>
-            </div>
- 
-            <div class="card" id="expulsão_postagem">
-                <div class="tittle">EXPULSÃO DO DEPARTAMENTO</div>
-                <form id="form_expulsões" action="#" onsubmit="fill_expulsoes(event)">
-                    <input type="text" name="horario_envio_exp" id="horario_envio_exp" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Nickname</span>
-                            <input name="nickname_expulso" id="nickname_expulso" type="text" placeholder="Nickname dos membros expulsos. Separe com ' / '" required>                 
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Motivo</span>
-                            <select name="motivo_expulso" id="motivo_expulso">
-                                <option value="" disabled selected>Motivo que levou à expulsão dos membros</option>
-                                <option value="Inatividade">Inatividade</option>
-                                <option value="Não postou retorno de licença">Não postou retorno de licença</option>
-                                <option value="Não realizou a meta no prazo">Não realizou a meta no prazo</option>
-                                <option value="Meta não cumprida por duas semanas consecutivas">Meta não cumprida por duas semanas consecutivas</option>
-                                <option value="Infração cometida">Infração cometida</option>
-                            </select>
-                        </div>
-                        <div class="input-box" style="width: 100%;">
-                            <span class="details_span">Permissão</span>
-                            <input name="comprovante_expulso" id="comprovante_expulso" type="text" placeholder="Adicione a permissão de um membro da intendência" required>                 
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_expulso" value="Enviar">
-                        </div>
-                    </div>
-                </form>
-            </div>
- 
-            <div class="card" id="supervisao_listagem">
-            <div class="tittle">SUPERVISÃO DA LISTAGEM</div>
-            <form id="sup_listagem" action="#" onsubmit="return fill_sup(event)">
-            <input type="text" name="horario_envio_sup" id="horario_envio_sup" style="display: none;">
-                <div class="details">
-                    <div class="input-box">
-                        <span class="details_span">Nickname</span>
-                      <input name="list_nick" id="list_nick" type="text" placeholder="Nickname dos membros a serem removidos da listagem. Separe com ' / '" required>             
-                    </div>
-                    <div class="input-box">
-                        <span class="details_span">Motivo</span>
-                        <input name="list_mtv" id="list_mtv" type="text" placeholder="Motivo que levou à remoção dos membros" required>             
-                    </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_sup" value="Enviar">
-                        </div>
                 </div>
             </form>
-            </div>
- 
-            <div class="card" id="alteração_nickname">
-                <div class="tittle">ALTERAÇÃO DE NICKNAME</div>
-                <form id="altera_nick" action="#" onsubmit="fill_changing_nickname(event)">
-                <input type="text" name="horario_envio_nick" id="horario_envio_nick" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Nickname na listagem</span>
-                            <input name="nickname_atual_mudança" id="nickname_atual_mudança" type="text" placeholder="Nickname atual a ser removido da listagem" required>                 
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Novo nickname</span>
-                            <input name="nickname_novo_mudança" id="nickname_novo_mudança" type="text" placeholder="Nickname a ser preenchido na listagem" required>                 
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_nickname" value="Enviar">
-                        </div>
-                    </div>
-                </form>
-            </div>
- 
-            <div class="card" id="migração_corpo">
-                <div class="tittle">MIGRAÇÃO DE CORPO</div>
-                <form id="mig_corpo" action="#" onsubmit="fill_migrating(event)">
-                <input type="text" name="horario_envio_mig" id="horario_envio_mig" style="display: none;">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">Nickname</span>
-                            <input name="nickname_mig" id="nickname_mig" type="text" placeholder="Nickname do membro que está migrando de corpo" required>                 
-                        </div>
-                        <div class="check-box">
-                            <input id="confirmar_mig" name="confirmar_mig" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_saida')">     
-                                <label id="confirmar_mig_lb" for="confirmar_mig">Afirmo estar ciente das normativas do processo de migração de corpo dispostas no Regimento Interno.</label><br>
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_mig" value="Enviar">
-                        </div>
-                    </div>
-                </form>
-            </div>
- 
-            <div class="card" id="adv_postagem">
-          <div class="tittle">ADVERTÊNCIA INTERNA</div>
-            <form id="advertencia_postagem" action="#" onsubmit="return fill_advertencia(event)">
-            <input type="text" name="horario_envio_adv" id="horario_envio_adv" style="display: none;">
+        </div>
+
+        <div class="card" id="saída_autopostagem">
+            <div class="tittle">SAÍDA</div>
+            <form id="saidas_honrosas" action="#" onsubmit="fill_saida(event)">
+                <input type="text" name="horario_envio_saida" id="horario_envio_saida" style="display: none;">
                 <div class="details">
-                    <div class="input-box">
-                        <span class="details_span">Nickname</span>
-                        <input name="nick_adv" id="nick_adv" type="text" placeholder="Nickname do membro punido" required>             
-                    </div>
-                    <div class="input-box">
-                        <span class="details_span">Motivo</span>
-                        <input name="adv_motivo" id="adv_motivo" type="teext" placeholder="Motivo da advertência" required>             
-                    </div>
                     <div class="input-box" style="width: 100%;">
-                        <span class="details_span">Permissão</span>
-                        <input name="perm_adv" id="perm_adv" type="text" placeholder="Nickname do membro que concedeu a permissão" required>             
+                        <span class="details_span">Nickname do Membro</span>
+                        <input id="nickname_saída" name="nickname_saída" type="text" placeholder="Nickname do membro saindo do departamento." required>                 
                     </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_adv" value="Enviar">
-                        </div>
+                    <div class="input-box" style="width: 100%;" id="saida_perm">
+                        <span class="details_span">Permissão</span>
+                        <input id="permissão_saída" name="permissão_saída" type="text" placeholder="Nickname do membro que concedeu a permissão" required>                 
+                    </div>
+
+                    <div class="input-box" style="width: 100%;" id="saida_motivo">
+                      <span class="details_span">Motivo</span>
+                      <input id="motivo_saida" name="motivo_saida" type="text" placeholder="Motivo para saída." required>                 
+                  </div>
+
+                    <div class="check-box">
+                        <input id="confirmar_saida" name="confirmar_saida" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_saida')">     
+                            <label id="confirmar_saida_lb" for="confirmar_saida">Li e concordo com as normas de saída descritas no Regimento Interno.</label><br>
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_saida" value="Enviar">
+                    </div>
                 </div>
             </form>
-            </div>
- 
-            <div class="card" id="realocação_ministerial">
-            <div class="tittle">MUDANÇA DE CARGO</div>
-            <form id="re_ministerial" action="#" onsubmit="fill_min(event)">
-            <input type="text" name="horario_envio_min" id="horario_envio_min" style="display: none;">
+        </div>
+
+        <div class="card" id="expulsão_postagem">
+            <div class="tittle">EXPULSÃO DO SETOR</div>
+            <form id="form_expulsões" action="#" onsubmit="fill_expulsoes(event)">
+                <input type="text" name="horario_envio_exp" id="horario_envio_exp" style="display: none;">
                 <div class="details">
                     <div class="input-box">
-                      <span class="details_span">Nickname</span>
-                      <input name="re_nick" id="re_nick" type="text" placeholder="Nickname do realocado" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Antigo cargo</span>
-                            <select name="min_atual" id="min_atual">
-                                <option value="" disabled selected>Selecione o atual cargo</option>
-                                <option value="1">Departamento de Comunicação</option>
-                        <option value="2">Departamento de Markething</option>
-                        <option value="3">Departamento de Eventos</option>
-                        <option value="4">Secretário</option>
-                        <option value="5">Vice-Líder</option>
-                        <option value="6">Líder</option>
-                            </select>
-                        </div>
-                        <div class="input-box">
-                            <span class="details_span">Novo cargo</span>
-                            <select name="min_novo" id="min_novo">
-                              <option value="1">Departamento de Comunicação</option>
-                              <option value="2">Departamento de Markething</option>
-                              <option value="3">Departamento de Eventos</option>
-                              <option value="4">Secretário</option>
-                              <option value="5">Vice-Líder</option>
-                              <option value="6">Líder</option>
-                            </select>
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_realocação" value="Enviar">
-                        </div>
+                        <span class="details_span">Nickname</span>
+                        <input name="nickname_expulso" id="nickname_expulso" type="text" placeholder="Nickname dos membros expulsos. Separe com ' / '" required>                 
                     </div>
-                </form>
-            </div>
- 
-            <div class="card" id="atualização_listagem">
-                <div class="tittle">ATUALIZAÇÃO DA LISTAGEM</div>
-                <form id="attlist_postagem" action="#" onsubmit="fill_attlist(event)">
-                    <div class="details">
-                        <div class="input-box">
-                            <span class="details_span">TAG</span>
-                            <input id="attlist_tag" name="attlist_tag" type="text" placeholder="TAG do atualizador responsável. Ex: Qox" required>                 
-                        </div>
-                        <div class="check-box">
-                            <input id="confirmar_attlist" name="confirmar_attlist" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_attlist')">     
-                                <label id="confirmar_attlist" for="confirmar_attlist">Afirmo estar ciente de que esse requerimento é reservado ao secretário+ do subgrupo.</label><br>
-                        </div>
-                        <div class="button">
-                            <input type="submit" id="enviar_attlist" value="Enviar">
-                        </div>
+                    <div class="input-box">
+                        <span class="details_span">Motivo</span>
+                        <input name="motivo_expulso" id="motivo_expulso" type="text" placeholder="Motivo que levou à expulsão dos membros." required>                 
                     </div>
-                </form>
+                   
+                    <div class="button">
+                        <input type="submit" id="enviar_expulso" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="supervisao_listagem">
+        <div class="tittle">SUPERVISÃO DA LISTAGEM</div>
+        <form id="sup_listagem" action="#" onsubmit="return fill_sup(event)">
+        <input type="text" name="horario_envio_sup" id="horario_envio_sup" style="display: none;">
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Nickname</span>
+                  <input name="list_nick" id="list_nick" type="text" placeholder="Nickname dos membros a serem removidos da listagem. Separe com ' / '" required>             
+                </div>
+                <div class="input-box">
+                    <span class="details_span">Motivo</span>
+                    <input name="list_mtv" id="list_mtv" type="text" placeholder="Motivo que levou à remoção dos membros" required>             
+                </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_sup" value="Enviar">
+                    </div>
             </div>
+        </form>
+        </div>
+
+        <div class="card" id="alteração_nickname">
+            <div class="tittle">ALTERAÇÃO DE NICKNAME</div>
+            <form id="altera_nick" action="#" onsubmit="fill_changing_nickname(event)">
+            <input type="text" name="horario_envio_nick" id="horario_envio_nick" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Nickname na listagem</span>
+                        <input name="nickname_atual_mudança" id="nickname_atual_mudança" type="text" placeholder="Nickname atual a ser removido da listagem" required>                 
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Novo nickname</span>
+                        <input name="nickname_novo_mudança" id="nickname_novo_mudança" type="text" placeholder="Nickname a ser preenchido na listagem" required>                 
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_nickname" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="migração_corpo">
+            <div class="tittle">MIGRAÇÃO DE CORPO</div>
+            <form id="mig_corpo" action="#" onsubmit="fill_migrating(event)">
+            <input type="text" name="horario_envio_mig" id="horario_envio_mig" style="display: none;">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">Nickname</span>
+                        <input name="nickname_mig" id="nickname_mig" type="text" placeholder="Nickname do membro que está migrando de corpo" required>                 
+                    </div>
+                    <div class="check-box">
+                        <input id="confirmar_mig" name="confirmar_mig" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_saida')">     
+                            <label id="confirmar_mig_lb" for="confirmar_mig">Afirmo estar ciente das normativas do processo de migração de corpo dispostas no Regimento Interno.</label><br>
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_mig" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="adv_postagem">
+      <div class="tittle">ADVERTÊNCIA INTERNA</div>
+        <form id="advertencia_postagem" action="#" onsubmit="return fill_advertencia(event)">
+        <input type="text" name="horario_envio_adv" id="horario_envio_adv" style="display: none;">
+            <div class="details">
+                <div class="input-box">
+                    <span class="details_span">Nickname</span>
+                    <input name="nick_adv" id="nick_adv" type="text" placeholder="Nickname do membro punido" required>             
+                </div>
+                <div class="input-box">
+                    <span class="details_span">Motivo</span>
+                    <input name="adv_motivo" id="adv_motivo" type="teext" placeholder="Motivo da advertência" required>             
+                </div>
+                
+                    <div class="button">
+                        <input type="submit" id="enviar_adv" value="Enviar">
+                    </div>
+            </div>
+        </form>
+        </div>
+
+        <div class="card" id="realocação_ministerial">
+        <div class="tittle">MUDANÇA DE CARGO</div>
+        <form id="re_ministerial" action="#" onsubmit="fill_min(event)">
+        <input type="text" name="horario_envio_min" id="horario_envio_min" style="display: none;">
+            <div class="details">
+                <div class="input-box">
+                  <span class="details_span">Nickname</span>
+                  <input name="re_nick" id="re_nick" type="text" placeholder="Nickname do realocado" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Antigo cargo</span>
+                        <select name="min_atual" id="min_atual">
+                            <option value="" disabled selected>Selecione o atual cargo</option>
+                            <option value="1">Aplicador</option>
+                            <option value="2">Vice-Líder</option>
+                            <option value="3">Líder</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details_span">Novo cargo</span>
+                        <select name="min_novo" id="min_novo">
+                            <option value="" disabled selected>Selecione o novo cargo</option>
+                            <option value="1">Aplicador</option>
+                            <option value="2">Vice-Líder</option>
+                            <option value="3">Líder</option>
+                        </select>
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_realocação" value="Enviar">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="card" id="atualização_listagem">
+            <div class="tittle">ATUALIZAÇÃO DA LISTAGEM</div>
+            <form id="attlist_postagem" action="#" onsubmit="fill_attlist(event)">
+                <div class="details">
+                    <div class="input-box">
+                        <span class="details_span">TAG</span>
+                        <input id="attlist_tag" name="attlist_tag" type="text" placeholder="TAG do atualizador responsável. Ex: Qox" required>                 
+                    </div>
+                    <div class="check-box">
+                        <input id="confirmar_attlist" name="confirmar_attlist" type="checkbox" value= null onchange="ValidaCheckBox('confirmar_attlist')">     
+                            <label id="confirmar_attlist" for="confirmar_attlist">Afirmo estar ciente de que esse requerimento é reservado a liderança do departamento.</label><br>
+                    </div>
+                    <div class="button">
+                        <input type="submit" id="enviar_attlist" value="Enviar">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
- 
+</div>
+
 </div><footer id="footer_pg">    </footer><div style="" class="footer_base">
-  <span>Todos os direitos reservados à companhia dos Instrutores.</span>        <div class="developed">
-        <em class="bx bx-code-alt nav_icon"></em>            <span class="nav_name">Desenvolvido por BjornBerserker / Reformulado por Qox</span>        
+<span>Todos os direitos reservados à companhia dos Instrutores.</span>        <div class="developed">
+    <em class="bx bx-code-alt nav_icon"></em>            <span class="nav_name">Reformulado por Qox</span>        
 </div>
 
 </div><footer id="footer_pg"></footer><textarea id="fa-generated-message" style="display: none;"></textarea>   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script>
@@ -1261,81 +1237,106 @@ function retornaDateTime(id){
 }
  
 function retornaCargo(value){
-    var cargos = ['Departamento de Comunicação', 'Departamento de Markething', 'Departamento de Eventos', 'Secretário', 'Vice-Líder', 'Lider'];
+    var cargos = ['Membro', 'Secretário', 'Vice-Líder', 'Líder'];
     return cargos[parseInt(value) - 1];
 }
 
  
 function retornaMin(value){
-  var remin = ['Qox', 'Administração', 'Qox', 'Qox', 'Qox'];
+  var remin = ['Aplicador', 'Vice-Líder', 'Líder'];
     return remin[parseInt(value) - 1];
 }
  
 // --------------> FUNÇÕES PARA CADA TIPO DE REQUERIMENTO
  
-function fill_entradas(e){
-    e.preventDefault();
-        retornaDateTime('horario_envio_entradas');
-    var isValid = true;
-    if($("#novos_membros").val() == null){isValid = false};
-    if($("#necessidade_novos").val() == null){isValid = false};
-    $("#novos_membros").find("input").each(function(){
-        if($(this).val() == ""){isValid = false};
-    })
- 
-    // SE VALIDAÇÃO É VERIFICADA:
-    if(isValid == true){
-        $('#enviar_enter').val('Enviando... Aguarde!').prop("disabled",true);
- 
-        var entradas = $('#novos_membros').val().split(' / ');
-        var lista = '';
- 
-        entradas.forEach(function(nickname){
-            lista = lista + "\n • [b]" + nickname + '[/b] - '+ retornaData(0);
-        });
- 
-        if($('#necessidade_novos').val() == 1){var necessidade = "Departamento de Comunicação"}
-        if($('#necessidade_novos').val() == 2){var necessidade = "Departamento de Eventos"}
-        if($('#necessidade_novos').val() == 3){var necessidade = "Departamento de Markething"}
-        if($('#necessidade_novos').val() == 4){var necessidade = "[b]✓[/b] Policiais já adicionados no emblema e subfórum."}
- 
-      var texto = "[font=Poppins][size=15][color=#0e64b5][b]ENTRADA[/b][/color][/size]\n" + lista + "\n\n" + necessidade + "[/font]";
-         
-        document.getElementById('fa-generated-message').value = texto;
-        send_data('novo_membro');
-    }
-    // SE VALIDAÇÃO NÃO É VERIFICADA:
-    else{
-        alert('Preencha todos os campos!')
-    };
-    return isValid;
+function fill_entradas(e) {
+  e.preventDefault();
+  retornaDateTime('horario_envio_entradas');
+  var isValid = true;
+
+  // Check if #novos_membros and #necessidade_novos are not null
+  if ($("#novos_membros").val() == null) { isValid = false; }
+  if ($("#necessidade_novos").val() == null) { isValid = false; }
+
+  // Check if any input within #novos_membros is empty
+  $("#novos_membros").find("input").each(function() {
+      if ($(this).val() == "") { isValid = false; }
+  });
+
+  // If validation passes
+  if (isValid) {
+      $('#enviar_enter').val('Enviando... Aguarde!').prop("disabled", true);
+
+      var entradas = $('#novos_membros').val().split(' / ');
+      var lista = '';
+
+      // Build the list of nicknames
+      entradas.forEach(function(nickname) {
+          lista += "\n • [b]" + nickname + '[/b] - ' + retornaData(0);
+      });
+
+      // Determine the necessity based on the selected value
+      var necessidade;
+      switch ($('#necessidade_novos').val()) {
+          case "1":
+              necessidade = "Departamento de Comunicação";
+              break;
+          case "2":
+              necessidade = "Departamento de Eventos";
+              break;
+          case "3":
+              necessidade = "Departamento de Markething";
+              break;
+          case "4":
+              necessidade = "";
+              break;
+          default:
+              necessidade = "";
+      }
+
+      // Construct the final text
+      var texto = "[font=Poppins][size=18][center][color=#0e64b5][b]ENTRADA[/b][/color][/center][/size]\n[b]Nick:[/b] " + $('#novos_membros').val() + "\n[b]Setor:[/b] " + necessidade + "[/font]";
+
+      document.getElementById('fa-generated-message').value = texto;
+      send_data('novo_membro');
+  }
+  // If validation fails
+  else {
+      alert('Preencha todos os campos!');
+  }
+
+  return isValid;
 }
+
+
+
  
 function fill_reintegration(e) {
-    e.preventDefault();
-    retornaDateTime('horario_envio_reint');
-    var isValid = true;
+  e.preventDefault();
+  retornaDateTime('horario_envio_reint');
+  var isValid = true;
 
-    // Verifica se todos os inputs dentro de #nickname_reintegrado têm valor
-    $("#nickname_reintegrado").find("input").each(function(){
-        if ($(this).val() == "") { isValid = false; }
-    });
+  // Check if any input within #nickname_reintegrado is empty
+  $("#nickname_reintegrado").find("input").each(function(){
+      if ($(this).val() == "") { isValid = false; }
+  });
 
-    if (isValid) {
-        $('#enviar_rein').val('Enviando... Aguarde!').prop("disabled", true);
+  if (isValid) {
+      $('#enviar_rein').val('Enviando... Aguarde!').prop("disabled", true);
 
-        var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]REINTEGRAÇÃO[/b][/color][/font][/size]\n\n" +
-            "• [b]" + $("#nickname_reintegrado").val() + "[/b] - " + retornaData(0) + "\n\n" +
-            "[b]Cargo:[/b] " + $("#reint_cargo").val() + "\n" + 
-            "[b]Permissão:[/b] " + $("#lid_permitida").val() + "\n"; 
+      var texto =
+          "[font=Poppins][size=18][center][color=#0e64b5][b]REINTEGRAÇÃO[/b][/color][/center][/size]\n\n" +
+          "[b]Nick: [/b]" + $("#nickname_reintegrado").val() + "\n" +
+          "[b]Cargo:[/b] " + $("#reint_cargo").val() + "\n" + 
+          "[b]Permissão:[/b] " + $("#lid_permitida").val() + "[/font]\n";
 
-        document.getElementById('fa-generated-message').value = texto;
-        send_data('postagem_reintegrados');
-    } else {
-        alert('Preencha todos os campos!');
-    }
+      document.getElementById('fa-generated-message').value = texto;
+      send_data('postagem_reintegrados');
+  } else {
+      alert('Preencha todos os campos!');
+  }
 }
+
 
 
 
@@ -1360,7 +1361,7 @@ function fill_graduation(e){
         });
  
         var texto =
-            "[font=Lexend Deca][size=15][color=#8c54cc][b]GRADUAÇÃO[/b][/color][/size]\n" + lista + "\n [b]Curso aplicado:[/b] " +
+            "[font=Lexend Deca][size=18][color=#0e64b5][b]GRADUAÇÃO[/b][/color][/size]\n" + lista + "\n [b]Curso aplicado:[/b] " +
             $('#grad_aplicada').val() + "[/font]"
  
         $('#fa-generated-message').val(texto);
@@ -1386,7 +1387,7 @@ function fill_license(e){
     if(isValid == true){
      
   var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]PEDIDO DE LICENÇA/RESERVA[/b][/color][/size]\n" + "\n" +
+            "[font=Poppins][size=18][center][color=#0e64b5][b]PEDIDO DE LICENÇA/RESERVA[/b][/center][/color][/size]\n" + "\n" +
             "[b]Nickname:[/b] " + $("#nickname_lic").val() + "\n" +
             "[b]Período:[/b] " + retornaData(0) + ' até ' + retornaData($('#dias_lic').val()) + "\n" +
             "[b]Permissão:[/b] " + $("#permissao_lic").val() + "[/font]"     
@@ -1413,7 +1414,7 @@ function fill_retornos(e){
     if(isValid == true){
  
         var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]RETORNO DE LICENÇA/RESERVA[/b][/color][/size] \n \n" +         
+            "[font=Poppins][size=18][center][color=#0e64b5][b]RETORNO DE LICENÇA/RESERVA[/b][/center][/color][/size] \n \n" +         
             "[b]Nickname:[/b] " + $("#retorno_nick").val() + "\n\n" +
             "[b]✓[/b] Estou retornando da minha licença/reserva de serviço.[/font]"
         document.getElementById('fa-generated-message').value = texto;
@@ -1439,7 +1440,7 @@ function fill_change(e){
         $('#enviar_change').val('Enviando... Aguarde!').prop("disabled",true);
         if($('#novo_cargo').val() > $('#antigo_cargo').val()) {var tipo = 'PROMOÇÃO'}else{var tipo = 'REBAIXAMENTO'};
         var texto =
-            "[font=Poppins][size=15][color=#338da4][b]" + tipo + " [/b][/color][/size] \n \n" +             
+            "[font=Poppins][center][size=18][color=#0e64b5][b]" + tipo + " DE MEMBRO[/b][/center][/color][/size] \n \n" +             
             "[b]Nickname:[/b] " + $('#nickname_mudança_cargo').val() + "\n" +
             "[b]Antigo cargo:[/b] " + retornaCargo($('#antigo_cargo').val()) + "\n" +
             "[b]Novo cargo:[/b] " + retornaCargo($('#novo_cargo').val()) + "\n" +
@@ -1454,66 +1455,77 @@ function fill_change(e){
         alert('Preencha todos os campos!')};
     return isValid;}
  
-function fill_saida(e){
-    e.preventDefault();
-    var isValid = true;
-    retornaDateTime('horario_envio_saida');
-    // >>>> CASO SAÍDA POSTADA NORMALMENTE
-    if($('#confirmar_saida').is(":checked")){
-        if($('#nickname_saída').val() == "" || $('#permissão_saída').val() == ""){isValid = false};
+    function fill_saida(e) {
+            e.preventDefault();
+            var isValid = true;
+            retornaDateTime('horario_envio_saida');
+
+            if ($('#confirmar_saida').is(":checked")) {
+                if ($('#nickname_saida').val() === "" || $('#permissao_saida').val() === "" || $('#motivo_saida').val() === "") {
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    $('#enviar_saida').val('Enviando... Aguarde!').prop("disabled", true);
+                    var texto =
+                        "[font=Poppins][size=18][center][color=#0e64b5][b]SAÍDA[/b][/color][/center][/size]\n" + "\n" +
+                        "[b]Nickname:[/b] " + $('#nickname_saída').val() + "\n" +
+                        "[b]Permissão:[/b] " + $('#permissão_saída').val() + "\n" +
+                        "[b]Motivo:[/b] " + $('#motivo_saida').val() + "\n" +
+                        "\n[b]✓[/b] Li e concordo com as normas de saída descritas no Regimento Interno.[/font]";
+                    $('#fa-generated-message').val(texto);
+                    send_data('saidas_honrosas');
+                } else {
+                    alert('Preencha todos os campos!');
+                }
+            } else {
+                alert('Você deve concordar com as normas de saída.');
+            }
+        }
+
+        function ValidaCheckBox(id) {
+            // Se necessário, adicione lógica para quando a checkbox for alterada
+            console.log('Checkbox ' + id + ' alterada.');
+        }
  
-    if(isValid == true){
-        $('#enviar_saida').val('Enviando... Aguarde!').prop("disabled",true);}
- 
-        if(isValid == true){
-            $('#enviar_saida').val('Enviando... Aguarde!').prop("disabled",true);
-            console.log($("#horario_envio_saida").val())
-            var texto =
-                "[font=Poppins][size=15][color#0e64b5][b]SAÍDA DO SETOR[/b][/color][/size]\n" + "\n" +
-                "[b]Nickname:[/b] " + $('#nickname_saída').val() + "\n" +
-                "[b]Permissão:[/b] " + $('#permissão_saída').val() + "\n" +
-                "[b]Motivo:[/b] " + $('#motivo_saida').val() + "\n" +
-                "\n[b]✓[/b] Li e concordo com as normas de saída descritas no Regimento Interno.[/font]";         
-            $('#fa-generated-message').val(texto);
-            send_data('saidas_honrosas');
-        }else{alert('Preencha todos os campos!')}
-    }
- 
-    else{
-        isValid = false;
-        alert('Selecione a caixa de seleção!')
-    }
-    return isValid;
-}
- 
-function fill_expulsoes(e){
+        function fill_expulsoes(e) {
     e.preventDefault();
     retornaDateTime('horario_envio_exp');
     var isValid = true;
-    $("#form_expulsões").find("input").each(function(){
-        if($(this).val() == ""){isValid = false};
-    })
-    // SE VALIDAÇÃO É VERIFICADA:
-    if(isValid == true){
-        $('#enviar_expulso').val('Enviando... Aguarde!').prop("disabled",true);
- 
+
+    // Verifica se algum input dentro de #form_expulsões está vazio
+    $("#form_expulsões").find("input").each(function() {
+        if ($(this).val() == "") { isValid = false; }
+    });
+
+    // Se a validação passar
+    if (isValid) {
+        $('#enviar_expulso').val('Enviando... Aguarde!').prop("disabled", true);
+
         var expulsos = $('#nickname_expulso').val().split(' / ');
         var lista_expulsos = '';
-            expulsos.forEach(function(nickname){
-                lista_expulsos = lista_expulsos + "\n • [b]" + nickname + '[/b] - ' + $('#motivo_expulso').val();});
-             
-                var adicional = "\n \n [b]Permissão:[/b] " + $('#comprovante_expulso').val() + "[/font]"
-var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]EXPULSÃO DO DEPARTAMENTO[/b][/color][/size] \n" + lista_expulsos + adicional                         
+
+        // Construir a lista de expulsos com motivo
+        expulsos.forEach(function(nickname) {
+            lista_expulsos += "\n[b]Nick:[/b] " + nickname + '\n[b]Motivo:[/b] ' + $('#motivo_expulso').val();
+        });
+
+        // Construir o texto final sem a permissão
+        var texto = "[font=Poppins][size=18][color=#0e64b5][center][b]EXPULSÃO[/b][/color][/center][/size]" + lista_expulsos + "[/font]";
+
         $('#fa-generated-message').val(texto);
         send_data('form_expulsões');
     }
-    // SE VALIDAÇÃO NÃO É VERIFICADA:
-    else{
-        alert('Preencha todos os campos!')
-    };
+    // Se a validação falhar
+    else {
+        alert('Preencha todos os campos!');
+    }
+
     return isValid;
 }
+
+
+      
  
 function fill_sup(e){
     e.preventDefault();
@@ -1533,7 +1545,7 @@ function fill_sup(e){
             });
  
         var texto =
-            "[font=Poppins][size=15][color=#8c54cc][b]REMOÇÃO DA LISTAGEM[/b][/color][/size]\n" +
+            "[font=Poppins][size=18][center][color=#0e64b5][b]REMOÇÃO DA LISTAGEM[/b][/center][/color][/size]\n" +
             lista + "[/font]"
         document.getElementById('fa-generated-message').value = texto;
         send_data('sup_listagem');
@@ -1555,7 +1567,7 @@ function fill_changing_nickname(e){
     if(isValid == true){
         $('#enviar_nickname').val('Enviando... Aguarde!').prop("disabled",true);
         var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]ALTERAÇÃO DE NICKNAME[/b][/color][/size] \n \n" +             
+            "[font=Poppins][size=18][center][color=#0e64b5][b]ALTERAÇÃO DE NICKNAME[/b][/center][/color][/size] \n \n" +             
             "[b]Nickname na listagem:[/b] " + $('#nickname_atual_mudança').val() + "\n" +
             "[b]Novo nickname:[/b] " + $('#nickname_novo_mudança').val() + "[/font]"
         $('#fa-generated-message').val(texto);
@@ -1580,7 +1592,7 @@ function fill_migrating(e){
     if(isValid == true){
         $('#enviar_mig').val('Enviando... Aguarde!').prop("disabled",true);
         var texto =
-            "[font=Poppins][size=15][color=#8c54cc][b]MIGRAÇÃO DE CORPO[/b][/color][/size] \n \n" +             
+            "[font=Poppins][size=15][color=#0e64b5][b]MIGRAÇÃO DE CORPO[/b][/color][/size] \n \n" +             
             "[b]Nickname:[/b] " + $('#nickname_mig').val() + "\n\n" +
             "[b]✓[/b] Afirmo estar ciente das normativas do processo de migração de corpo dispostas no Regimento Interno.[/font]"
         $('#fa-generated-message').val(texto);
@@ -1593,30 +1605,32 @@ function fill_migrating(e){
     return isValid;
 }
  
-function fill_advertencia(e){
+function fill_advertencia(e) {
     e.preventDefault();
     retornaDateTime('horario_envio_adv');
     var isValid = true;
-    $("#advertencia_postagem").find("input").each(function(){
-        if($(this).val() == ""){isValid = false};
-    })
-        if(isValid == true){
-        $('#enviar_adv').val('Enviando... Aguarde!').prop("disabled",true);}
+    $("#advertencia_postagem").find("input").each(function() {
+        if ($(this).val() == "") { isValid = false; }
+    });
+    
+    if (isValid == true) {
+        $('#enviar_adv').val('Enviando... Aguarde!').prop("disabled", true);
+    }
  
-    if(isValid == true){
-      var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]ADVERTÊNCIA INTERNA[/b][/color][/size]\n" + "\n" +
+    if (isValid == true) {
+        var texto =
+            "[font=Poppins][size=18][center][color=#0e64b5][b]ADVERTÊNCIA INTERNA[/b][/center][/color][/size]\n" + "\n" +
             "[b]Nickname:[/b] " + $("#nick_adv").val() + "\n" +
             "[b]Motivo:[/b] " + $("#adv_motivo").val() + "\n" +
-            "[b]Término:[/b] " + retornaData(30) + "\n" +
-            "[b]Permissão:[/b] " + $("#perm_adv").val() + "[/font]";     
+            "[b]Término:[/b] " + retornaData(30) + "[/font]";
+            
         document.getElementById('fa-generated-message').value = texto;
         send_data('advertencia_postagem');
-    }
-    else{
+    } else {
         alert('Preencha todos os campos!');
-    };
+    }
 }
+
  
 function fill_min(e){
     e.preventDefault();
@@ -1632,10 +1646,10 @@ function fill_min(e){
     if(isValid == true && $('#min_novo').val() != $('#min_atual').val()){
               $('#enviar_realocação').val('Enviando... Aguarde!').prop("disabled",true);
       var texto =
-            "[font=Poppins][size=15][color=#0e64b5][b]REALOCAÇÃO[/b][/color][/size]\n\n" +
+            "[font=Poppins][size=18][center][color=#0e64b5][b]REALOCAÇÃO[/b][/center][/color][/size]\n\n" +
             "[b]Nickname:[/b] " + $("#re_nick").val() + "\n" +
-            "[b]Ministério atual:[/b] " + retornaMin($('#min_atual').val()) + "\n" +
-            "[b]Novo ministério:[/b] " + retornaMin($('#min_novo').val()) + "[/font]";
+            "[b]Cargo atual:[/b] " + retornaMin($('#min_atual').val()) + "\n" +
+            "[b]Novo cargo:[/b] " + retornaMin($('#min_novo').val()) + "[/font]";
         document.getElementById('fa-generated-message').value = texto;
         send_data('re_ministerial');
     }
@@ -1656,16 +1670,18 @@ function fill_attlist(e){
   // SE VALIDAÇÃO É VERIFICADA:
 if(document.getElementById("confirmar_attlist").checked == false){isValid = false};
   if(isValid == true){
-    $('#enviar_attlist').val('Enviando... Aguarde!').prop("disabled",true);
-    var texto =
-        '[table class="rank ins"][tr][td][img]https://i.servimg.com/u/f23/19/52/62/57/src11.png[/img]\n' +
-        '[font=Poppins][SRC] Atualização realizada! [' + $('#attlist_tag').val() + ']\n' +
-        'Foi realizada uma atualização neste horário, em caso de erros, consulte um membro da Liderança do Setor de Relações Comunicativas.[/font][/td][/tr][/table]';
-    $('#fa-generated-message').val(texto);
-} else {
-    alert('Preencha todos os campos!');
+      $('#enviar_attlist').val('Enviando... Aguarde!').prop("disabled",true);
+      
+      var texto = '[table class="rank ins" style="transition: none 0ms ease 0s; margin: 0em; color: rgb(255, 255, 255); font-weight: 600; height: 36px; width: -webkit-fill-available; border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.14) 0px 1px 2px, rgba(0, 0, 0, 0.1) 0px 0px 1px 1px inset; text-align: center; line-height: 1.4em; RCC - SÓ A VERDADEIRA!: rgba(0, 0, 0, 0.2) 0px 1px 1px; border-collapse: collapse; font-family: Roboto, sans-serif; border-width: initial !important; border-style: none !important; border-color: initial !important;" bgcolor="#0e64b5"][tr style="transition: none 0ms ease 0s; border: medium none; box-sizing: border-box; margin: 0px; padding: 0px;"][td style="transition: none 0ms ease 0s; box-sizing: border-box; margin: 0px; padding: 15px; border-width: initial !important; border-style: none !important; border-color: initial !important;"][center][img]https://i.servimg.com/u/f23/19/52/62/57/src11.png[/img][/center]\n \n' +
+               '[center][color=#ffffff][size=16][SRC] Atualizado [' + $('#attlist_tag').val() + '][/size][/color]\n\n' +
+               '[color=#ffffff]Foi realizada uma atualização neste horário, em caso de erros, consulte um membro da Liderança do Setor de Relações Comunicativas.[/color][/center][/td][/tr][/table]';
+
+      $('#fa-generated-message').val(texto);}
+  else{
+      alert('Preencha todos os campos!');
+  }
 }
-}
+ 
 function send_data(forms){
     var url_macro = 'https://api.apispreadsheets.com/data/cwMuE9sMjzg2i318/';
     var forms_fill = document.getElementById(forms)
@@ -1766,8 +1782,6 @@ showMenu('header-toggle','navbar');
       }, 2000); // 2000 milissegundos = 2 segundos de atraso
     });
   </script>
-
-
 
 </body>
 </html>
